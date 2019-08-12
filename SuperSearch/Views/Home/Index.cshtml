@@ -1,0 +1,10 @@
+﻿@using SuperSearch.Models
+@model List<SearchObject>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@foreach (SearchObject item in Model)
+{
+    <a class="tablink" href="/info?Name=@item.Name">@item.Name</a>
+}
