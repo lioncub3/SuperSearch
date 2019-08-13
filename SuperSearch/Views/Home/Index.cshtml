@@ -6,5 +6,5 @@
 
 @foreach (SearchObject item in Model)
 {
-    <a class="tablink" href="/info?Name=@item.Name">@item.Name</a>
+    <a class="tablink" asp-action="Info" asp-route-Name="@item.Name">@item.Name</a>
 }

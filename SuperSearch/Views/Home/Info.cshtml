@@ -1,7 +1,32 @@
-﻿
+﻿@using SuperSearch.Models;
+@model SuperSearch.Models.InfoObject
 @{
     ViewData["Title"] = "Info";
 }
 
-<h1>Info</h1>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="@Model.searchObject.PhotoUrl" alt="" />
+        </div>
+        <div class="col-sm-8">
+            <h3>
+                @Model.searchObject.Name
+            </h3>
+            <p>
+                @Model.searchObject.Description
+            </p>
+        </div>
+    </div>
+    <div style="margin-top: 20px">
+        @if (Model.newsObject != null)
+        {
+            @foreach (NewsObject news in Model.newsObject)
+            {
+                <p>
+                    <a href="@news.Url" class="">@news.Name</a>
+                </p>
+            }
+        }
+    </div>
+</div>
